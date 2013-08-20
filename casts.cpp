@@ -57,5 +57,9 @@ int main(int argc, char** argv)
 	P("A\n");
 	B b3 = f(b2);
 	P("B\n");
+
+#ifdef WIN32
+	getchar();
+#endif
 	return 0;
 }
