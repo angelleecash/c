@@ -1,6 +1,8 @@
 #include "util.h"
 
-void dump(char* p, int n)
+char _utilBuffer[1024];
+
+void Dump(char* p, int n)
 {
 	int i;
 	for(i=0; i < n; i++)
