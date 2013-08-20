@@ -8,7 +8,7 @@
 #define VERBOSE_HEADER ""
 
 #define STACK_DUMP(L) (VERBOSE ? (stack_dump(L)) : (EMPTY))
-#define P(format, args...) (VERBOSE ? fprintf(stderr, VERBOSE_HEADER format , ## args) : (EMPTY))
+#define P(format, ...) (VERBOSE ? fprintf(stderr, VERBOSE_HEADER format , ## __VA_ARGS__) : (EMPTY))
 
 
 void dump(char* p, int n);
