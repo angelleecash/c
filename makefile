@@ -33,7 +33,17 @@ proc:
 	$(CC) $(CFLAGS) $(INCLUDE) -pthread -fPIC --share -o proc.so proc.c 
 
 
+templates: templates.o util.o
+	$(CPP) $(CPPFLAGS) -o $@ $(LDFLAGS) templates.o util.o $(LIBS) 
 
+varargs: varargs.o util.o
+	$(CPP) $(CPPFLAGS) -o $@ $(LDFLAGS) varargs.o util.o $(LIBS) 
+
+basic: basic.o util.o
+	$(CPP) $(CPPFLAGS) -o $@ $(LDFLAGS) basic.o util.o $(LIBS) 
+
+mem: mem.o 
+	$(CPP) $(CPPFLAGS) -o $@ $(LDFLAGS) mem.o $(LIBS) 
 c_stuff.o: c_stuff.c
 lua_call_c.o: lua_call_c.c
 lua_config.o: lua_config.c
@@ -44,6 +54,8 @@ thread.o: thread.c
 how_memory_allocation_works.o: how_memory_allocation_works.c
 util.o: util.c
 casts.o: casts.cpp
-
+varargs.o: varargs.cpp
+basic.o:basic.cpp
+mem.o:mem.cpp
 clean:
 	rm -f *.o c_call_lua lua_config lua_call_c c_stuff string closure *.so

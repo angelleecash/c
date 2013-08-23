@@ -30,6 +30,8 @@ class B:public A
 		}
 		int* k;
 		int c;
+		//for dynamic_cast<> to work
+		virtual void f(){}
 };
 
 B f(B b)
@@ -58,6 +60,18 @@ int main(int argc, char** argv)
 	B b3 = f(b2);
 	P("B\n");
 
+	void* vp = dynamic_cast<void*>(&b2);
+	P("vp=%p,bp=%p\n", vp, &b2);
+
+	int* ip = reinterpret_cast<int*>(1000);
+	P("ip=%p\n", ip);
+
+    ip = reinterpret_cast<int*>(&b2);
+
+	P("ip=%p\n", ip);
+
+	char* cp = "hello world";
+	cp[0] = 't';
 #ifdef WIN32
 	getchar();
 #endif
