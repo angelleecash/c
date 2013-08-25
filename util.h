@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-#include "my_assert.h"
+//#include "my_assert.h"
 
 #define VERBOSE 1
 #define EMPTY printf("%s", "")
@@ -29,7 +29,7 @@ inline int Align(int value, int base)
 {
 	int newValue = value + (base - (value%base)) %base;
 
-	ASSERT((newValue % base) == 0, "Align fail");
+//	ASSERT((newValue % base) == 0, "Align fail");
 	return newValue;
 }
 

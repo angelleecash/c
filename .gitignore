@@ -1,6 +1,12 @@
 # Object files
 *.o
 
+basic
+casts
+mem
+templates
+how_memory_allocation_works
+
 # Libraries
 *.lib
 *.a
