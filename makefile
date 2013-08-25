@@ -42,6 +42,9 @@ varargs: varargs.o util.o
 basic: basic.o util.o
 	$(CPP) $(CPPFLAGS) -o $@ $(LDFLAGS) basic.o util.o $(LIBS) 
 
+const: const.o util.o
+	$(CPP) $(CPPFLAGS) -o $@ $(LDFLAGS) const.o util.o $(LIBS) 
+
 mem: mem.o 
 	$(CPP) $(CPPFLAGS) -o $@ $(LDFLAGS) mem.o $(LIBS) 
 
@@ -56,6 +59,7 @@ how_memory_allocation_works.o: how_memory_allocation_works.c
 casts.o: casts.cpp
 varargs.o: varargs.cpp
 basic.o:basic.cpp
+const.o:const.cpp
 mem.o:mem.cpp
 util.o:util.cpp
 clean:

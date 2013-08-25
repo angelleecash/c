@@ -6,6 +6,7 @@ casts
 mem
 templates
 how_memory_allocation_works
+const
 
 # Libraries
 *.lib
