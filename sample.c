@@ -5,7 +5,7 @@ int global_uninit_var;
 
 void fun(int i)
 {
-	printf("%dabcd\n", i);
+	printf("%d\n", i);
 }
 
 int main()
